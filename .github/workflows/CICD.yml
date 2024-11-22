@@ -38,6 +38,10 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install dependencies
+        run: npm install
+        working-directory: ExploreChinaNow
+
       - name: Build Project (for Vite)
         run: npm run build
         working-directory: ExploreChinaNow
