@@ -19,9 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ExploreChinaNow
 
       - name: Run tests
-        run: npm test
+        run: npm run test
+        working-directory: ExploreChinaNow
 
   deploy:
     needs: test # Ensures deploy runs only if test passes
@@ -38,6 +40,7 @@ jobs:
 
       - name: Build Project (for Vite)
         run: npm run build
+        working-directory: ExploreChinaNow
 
       - name: Deploy Plan Server to Render
         run: |
