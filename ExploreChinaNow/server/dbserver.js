@@ -25,11 +25,11 @@ app.use(cookieParser());
 // app.use(express.static("./dist"));
 app.use(express.json());
 // Serve static files from React's build folder
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Catch-all route for React Router
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
 
