@@ -26,7 +26,7 @@ app.get('*', (req, res) => {
 
 
 // Allow requests from your Vite static site
-const allowedOrigins = ['https://explorechinanow-1de2.onrender.com'];
+const allowedOrigins = ['https://explorechinanow-1de2.onrender.com','http://localhost:5173/', 'http://localhost:3000/', 'http://localhost:4000/'];
 app.use(cors({
     origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],

@@ -9,7 +9,7 @@ import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "explorechinanow-4b024.firebaseapp.com",
+  authDomain: "explorechinanow-1de2.onrender.com",
   projectId: "explorechinanow-4b024",
   storageBucket: "explorechinanow-4b024.firebasestorage.app",
   messagingSenderId: "520817361107",
