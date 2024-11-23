@@ -21,8 +21,16 @@ app.use(cors({
 const FIREBASE_WEB_API_KEY = process.env.VITE_FIREBASE_API_KEY;
 const FIREBASE_PROJECT_ID = process.env.VITE_FIREBASE_PROJECT_ID;
 app.use(cookieParser());
-app.use(express.static("./dist"));
+// app.use(express.static("./dist"));
 app.use(express.json());
+// Serve static files from React's build folder
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Catch-all route for React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 
 
 /**

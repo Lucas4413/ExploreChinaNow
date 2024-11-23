@@ -13,8 +13,16 @@ const apiKey = process.env.ChatGPT_API_KEY;
 
 app.use(cookieParser());
 
-app.use(express.static('./dist'));
+// app.use(express.static('./dist'));
 app.use(express.json());
+// Serve static files from React's build folder
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Catch-all route for React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 
 // Allow requests from your Vite static site
 const allowedOrigins = ['https://explorechinanow-1de2.onrender.com'];
